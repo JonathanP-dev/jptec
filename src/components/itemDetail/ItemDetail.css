@@ -1,0 +1,84 @@
+.card-container {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgb(114, 114, 114);
+  background-color: rgba(255, 255, 255, 0.746);
+  box-shadow: 0px 0px 3px black;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  transition: 1s ease all;
+}
+
+.card-img {
+  border-radius: 4px;
+  width: 90%;
+  /* height: 250px; */
+  aspect-ratio: 5/7;
+  display: block;
+  object-fit: cover;
+  background: #fff;
+  transition: 1s ease all;
+}
+
+.card-img:hover {
+  transform: scale(1.1);
+}
+
+.card-btn {
+  border: none;
+  background: none;
+  color: #fff;
+  background-color: rgba(0, 52, 221, 0.823);
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: .8rem 2rem;
+  border-radius: 10px;
+  opacity: .8;
+  cursor: pointer;
+}
+
+.card-btn:hover {
+  opacity: 1;
+}
+
+.card-count-btns {
+  display: flex;
+  gap: 3rem;
+}
+
+.card-count-btns span {
+  color: #000;
+}
+
+.card-count-btn {
+  border: none;
+  background: none;
+  color: #fff;
+  background-color: rgba(0, 52, 221, 0.823);
+  font-size: .8rem;
+  width: 25px;
+  height: 25px;
+  border-radius: 2px;
+  opacity: .8;
+  cursor: pointer;
+}
+
+.card-count-btn:hover {
+  opacity: 1;
+}
+
+.card-title {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.card-price {
+  color: rgba(0, 217, 69, 0.829);
+}

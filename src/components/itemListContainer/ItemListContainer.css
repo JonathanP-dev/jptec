@@ -1,0 +1,24 @@
+.products {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.main-products-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.products-container li {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,68 @@
+.navbar-icons {
+  width: 30px;
+  /* height: 30px; */
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-icons img {
+  height: 30px;
+}
+
+.navbar-icons-container {
+  width: 55%;
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+.navbar-icons span {
+  position: absolute;
+  width: 1.4rem;
+  height: 1.4rem;
+  top: -15px;
+  right: -10px;
+  /* right: 10px; */
+  background-color: #116af8;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+  border-radius: 50%;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+@media (min-width: 500px) {
+
+  .navbar-icons-container {
+    width: 65%;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-icons-container {
+    width: 65%;
+    gap: 2rem;
+    justify-content: flex-end;
+  }
+
+  .navbar-icons span {
+    top: -15px;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .navbar-icons span {
+    top: -10px;
+  }
+
+  .navbar-icons-container {
+    width: 100%;
+  }
+
+  .search {
+    width: 100%;
+  }
+}
