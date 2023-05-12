@@ -1,39 +1,34 @@
-import { useState } from 'react'
-import { useContext } from 'react'
-import { CartContext } from '../../contexts/Cart'
 import './ItemDetail.css'
 
-export function ItemDetail ({item}) {
-  const {setTotalPurchased} = useContext(CartContext)
+import { BtnVolver } from '../../elements/buttons/BtnVolver';
+import { useParams } from 'react-router-dom';
+import { useGetProductById } from '../../hooks/useGetProductById';
+import { Loading } from '../../elements/Loading';
 
-  const [singularQuantity, setSingularQuantity] = useState(0)
-  const {title, price, images} = item
+export function ItemDetail () {
 
-  const handlePlus = () => {
-    setSingularQuantity(prev => prev + 1)
-    setTotalPurchased(prev => prev + 1)
-  }
-  const handleLess = () => {
-    if(singularQuantity > 0) {
-      setSingularQuantity(prev => prev - 1)
-      setTotalPurchased(prev => prev - 1)
-    }
-  }
+  const {id} = useParams()
+  const {product, loading} = useGetProductById(id)
   return (
-    <div className='card-container'>
-      <img className='card-img' src={images[0]} alt={`item ${title}`} />
-      <strong className='card-title'>{title}</strong>
-      <strong className='card-price'>${price}</strong>
-      <div className='card-count-btns'>
-        <button onClick={handlePlus} className='card-count-btn'>+</button>
-        
-        {singularQuantity > 0 && 
-        <>
-          <span>{singularQuantity}</span>
-          <button onClick={handleLess} className='card-count-btn'>-</button>
-        </>}
-      </div>
-      <button className='card-btn'>ver mas</button>
-    </div>
+    <>
+      <section className="item-detail-container">
+        {product && !loading ?
+          <div className="item-details">
+            <div className='item-img-title'>
+              <img className='item-detail-img' src={`../${product.images[0]}.jpg`} alt={product.description} />
+              <h1 className='item-detail-title'>{product.title}</h1>
+            </div>
+            <div className='item-desc-price'>
+              <span className='item-detail-desc'>{product.description}</span>
+              <h2 className='item-detail-price'>Precio: ${product.price}</h2>
+              <button className='item-detail-btn-add'>Add to Cart</button>
+            </div>
+          </div>
+          :
+          <Loading />
+        }
+      </section>
+      <BtnVolver path={'/'}/>
+    </>
   )
 }

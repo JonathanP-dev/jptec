@@ -1,7 +1,9 @@
 .hot-sale {
+  padding: .2rem 0;
   width: 100%;
   height: 50px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  text-align: center;
   font-weight: 500;
   color: #000;
   display: flex;
@@ -49,6 +51,6 @@
 
 @media (min-width: 500px) {
   .hot-sale {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }

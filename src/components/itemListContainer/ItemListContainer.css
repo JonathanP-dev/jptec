@@ -22,3 +22,28 @@
   display: flex;
   justify-content: center;
 }
+
+.btn-volver-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.btn-volver {
+  border: none;
+  background: none;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  background-color: black;
+  color: white;
+  opacity: .8;
+  justify-self: center;
+  border-radius: 10px;
+}
+
+.btn-volver:hover {
+  opacity: 1;
+  cursor: pointer;
+}

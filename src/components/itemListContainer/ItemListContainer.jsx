@@ -2,15 +2,26 @@
 import './ItemListContainer.css'
 
 // components-elements
-import { ItemDetail } from '../itemDetail/ItemDetail'
+import { Card } from '../card/Card'
 import { Loading } from '../../elements/Loading'
 
 // hooks
-import { useProducts } from '../../hooks/useProducts'
+import { useGetProducts } from '../../hooks/useProducts'
 
-export function ItemListContainer () {
+import { BtnVolver } from '../../elements/buttons/BtnVolver'
+// import { useState } from 'react'
 
-  const {products, loading} = useProducts()
+export function ItemListContainer ({category = '', favorites = false}) {
+  
+  // const [categoryType, setCategoryTipe] = useState({category})
+
+  const {products, loading} = useGetProducts({category, favorites})
+
+  // const {favs} = useGetFavs()
+  // administrar recibir fav por parametro para poder reutilizar este componente en la ruta favorites
+  // recibir parametro que sea fav = true si quiero renderizar solo los favoritos uso el map en el array favs
+
+  // chequear por que no se modifica el estado cuando el category cambia. Chequear usar contexto para eso.
 
   return(
     <section className='products'>
@@ -20,11 +31,12 @@ export function ItemListContainer () {
           {!loading && products.length > 0 &&
           products.map(item => (
             <li key={item.id}>
-              <ItemDetail item={item}/>
+              <Card item={item}/>
             </li>
           ))
           }
         </ul>
+        {(category || favorites) && !loading && <BtnVolver path={'/'}/>}
       </div>
     </section>
   )
