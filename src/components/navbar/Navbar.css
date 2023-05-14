@@ -111,15 +111,19 @@
   }
 
   33.3% {
-    height: 260px;
+    height: 180px;
   }
 
   66.6% {
-    height: 130px;
+    height: 70px;
+  }
+
+  99% {
+    height: 60px;
   }
 
   100% {
-    height: 0px;
+    height: auto;
   }
 }
 
@@ -223,6 +227,10 @@
     translate: 0px -.4rem;
     transform: rotate(-135deg);
   }
+
+  .navbar.show {
+    height: 0;
+  }
 }
 
 @media (min-width: 992px) {
@@ -269,5 +277,10 @@
 
   .menu-btn {
     display: none;
+  }
+
+  .navbar.show {
+    animation: heightChangeRest 1.5s linear both;
+    animation-iteration-count: 1;
   }
 }
