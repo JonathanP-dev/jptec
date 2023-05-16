@@ -18,7 +18,7 @@ export const PRODUCTS = [
     description: 'Laptop HP 14", FHD, 8GB, 512MB solid, 65Hz',
     category: 'laptop',
     images: ['laptop2', 'laptop'],
-    favorite: true
+    favorite: false
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ export const PRODUCTS = [
     description: 'Laptop Lenovo 17", FHD, 32GB, 1TB solid, 165Hz',
     category: 'laptop',
     images: ['laptop', 'laptop2'],
-    favorite: true
+    favorite: false
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ export const PRODUCTS = [
     description: 'Auriculares con orejitas para verte super cool cuando programas o perdes unas partidas de LoL',
     category: 'auriculares',
     images: ['auriculares2'],
-    favorite: true
+    favorite: false
   },
   {
     id: 6,
@@ -81,7 +81,7 @@ export const PRODUCTS = [
     description: 'Monitor Samsung UFHD, 27", 1800R, re gigante para poder jugar unas partiditas de LoL',
     category: 'monitor',
     images: ['monitor', 'monitor2'],
-    favorite: false
+    favorite: true
   },
   {
     id: 10,
