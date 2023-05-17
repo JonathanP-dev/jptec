@@ -9,12 +9,13 @@ import { Loading } from '../../elements/Loading'
 import { useGetProducts } from '../../hooks/useProducts'
 
 import { BtnVolver } from '../../elements/buttons/BtnVolver'
+import { useParams } from 'react-router-dom'
 // import { useState } from 'react'
 
-export function ItemListContainer ({category = '', favorites = false}) {
+export function ItemListContainer ({favorites = false}) {
   
   // const [categoryType, setCategoryTipe] = useState({category})
-
+  const {category} = useParams();
   const {products, loading} = useGetProducts({category, favorites})
 
   // const {favs} = useGetFavs()

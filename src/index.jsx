@@ -6,11 +6,9 @@ import { FavProvider } from './contexts/Favorites';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-      <CartProvider>
-        <FavProvider>
-          <App />
-        </FavProvider>
-      </CartProvider>
-  </React.StrictMode>
+  <CartProvider>
+    <FavProvider>
+      <App />
+    </FavProvider>
+  </CartProvider>
 );

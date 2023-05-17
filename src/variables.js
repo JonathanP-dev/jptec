@@ -78,7 +78,7 @@ export const PRODUCTS = [
     title: "Monitor Samsung",
     price: 25000,
     description: "Monitor Samsung UFHD, 27', 1800R, re gigante para poder jugar unas partiditas de LoL",
-    category: "monitor",
+    category: "monitors",
     images: [
       "monitor",
       "monitor2"
@@ -90,7 +90,7 @@ export const PRODUCTS = [
     title: "Monitor Gamer",
     price: 35000,
     description: "Monitor Samsung 4K, 24', 1800R, re gigante para poder jugar unas partiditas de LoL y Valorant",
-    category: "monitor",
+    category: "monitors",
     images: [
       "monitor2",
       "monitor"
@@ -102,7 +102,7 @@ export const PRODUCTS = [
     title: "Monitor Samsung",
     price: 25000,
     description: "Monitor Samsung UFHD, 27', 1800R, re gigante para poder jugar unas partiditas de LoL",
-    category: "monitor",
+    category: "monitors",
     images: [
       "monitor",
       "monitor2"

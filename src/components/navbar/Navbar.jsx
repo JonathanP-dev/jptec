@@ -49,13 +49,13 @@ export function Navbar () {
       </section>
       <section className="navbar">
         <ul className='navbar-menu'>
-          <li><NavLink onClick={()=> navigate('/')} to='/'>Store</NavLink></li>
-          <li><NavLink onClick={()=> navigate('/laptops')} to='/laptops'>Laptops</NavLink></li>
-          <li><NavLink onClick={()=> navigate('/monitors')} to='/monitors'>Monitors</NavLink></li>
-          <li><NavLink onClick={()=> navigate('/computers')} to='/computers'>Computers</NavLink></li>
-          <li><NavLink onClick={()=> navigate('/accesories')} to='/accesories'>Accesories</NavLink></li>
-          <li><NavLink onClick={()=> navigate('/branchs')} to='/branchs'>Branch Offices</NavLink></li>
-          <li><NavLink onClick={()=> navigate('/contact')} to='/contact'>Contact</NavLink></li>
+          <li><NavLink to='/'>Store</NavLink></li>
+          <li><NavLink to='/laptops'>Laptops</NavLink></li>
+          <li><NavLink to='/monitors'>Monitors</NavLink></li>
+          <li><NavLink to='/computers'>Computers</NavLink></li>
+          <li><NavLink to='/accesories'>Accesories</NavLink></li>
+          <li><NavLink to='/branchs'>Branch Offices</NavLink></li>
+          <li><NavLink to='/contact'>Contact</NavLink></li>
         </ul>
       </section>
     </div>

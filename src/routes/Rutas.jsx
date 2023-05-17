@@ -17,10 +17,7 @@ export function Rutas () {
         <Route path={'/product/:id'} element={<ItemDetail />}/>
         {/* chequear favorites que retorna todo, usar contexto????? */}
         <Route path='/favorites' element={<ItemListContainer favorites/>}/>
-        <Route path='/laptops' element={<ItemListContainer category='laptop'/>}/>
-        <Route path='/monitors' element={<ItemListContainer category='monitor'/>}/>
-        <Route path='/accesories' element={<ItemListContainer category='accesories'/>}/>
-        <Route path='/computers' element={<ItemListContainer category='computers'/>}/>
+        <Route path='/:category' element={<ItemListContainer />}/>
         {/* <Route path='/' element={<ItemListContainer/>}/> */}
       </Routes>
     </BrowserRouter>
