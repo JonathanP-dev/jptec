@@ -46,7 +46,7 @@ export function useGetProducts ({category, favorites}) {
           setProducts(products)
           setLoading(false)
         }
-      }, 2000);
+      }, 1000);
     
   }, [category])
 

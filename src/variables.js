@@ -7,7 +7,7 @@ export const PRODUCTS = [
     title: "Laptop Lenovo",
     price: 35000,
     description: "Laptop Lenovo 16', FHD, 16GB, 1TB solid, 65Hz",
-    category: "laptop",
+    category: "laptops",
     images: [
       "laptop",
       "laptop2"
@@ -19,7 +19,7 @@ export const PRODUCTS = [
     title: "Laptop HP",
     price: 25000,
     description: "Laptop HP 14', FHD, 8GB, 512MB solid, 65Hz",
-    category: "laptop",
+    category: "laptops",
     images: [
       "laptop2",
       "laptop"
@@ -43,7 +43,7 @@ export const PRODUCTS = [
     title: "Laptop Lenovo Nueva",
     price: 55000,
     description: "Laptop Lenovo 17', FHD, 32GB, 1TB solid, 165Hz",
-    category: "laptop",
+    category: "laptops",
     images: [
       "laptop",
       "laptop2"
