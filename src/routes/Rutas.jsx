@@ -4,6 +4,7 @@ import { ItemListContainer } from '../components/itemListContainer/ItemListConta
 import { HotSaleBar } from '../components/hotSaleBar/HotSaleBar';
 import { FeaturedProducts } from '../components/featuredProducts/FeaturedProducs';
 import { ItemDetail } from '../components/itemDetail/ItemDetail';
+import { Footer } from '../components/footer/Footer';
 
 
 export function Rutas () {
@@ -11,7 +12,6 @@ export function Rutas () {
     <BrowserRouter>
       <Navbar/>
       <HotSaleBar/>
-      
       <Routes>
         <Route path='/' element={<main><FeaturedProducts/><ItemListContainer /></main>}/>
         <Route path={'/product/:id'} element={<ItemDetail />}/>
@@ -20,6 +20,7 @@ export function Rutas () {
         <Route path='/:category' element={<ItemListContainer />}/>
         {/* <Route path='/' element={<ItemListContainer/>}/> */}
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
