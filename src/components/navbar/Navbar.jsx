@@ -34,11 +34,7 @@ export function Navbar () {
         <Logo />
         <div className="navbar-icons-container">
           <Search />
-          {
-            totalFavs
-            ? <NavbarIcon type={'favRed'} />
-            : <NavbarIcon type={'fav'} />
-          }
+            <NavbarIcon type={totalFavs ? 'favRed' : 'fav'} />
           <NavbarIcon type={'shoppingCart'}/>
           <button onClick={handleShowMenu} className='menu-btn'>
             <span className="line line1"></span>

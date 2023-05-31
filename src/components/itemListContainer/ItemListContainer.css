@@ -26,14 +26,14 @@
   justify-content: center;
 }
 
-.btn-volver-container {
+.btn-back-container {
   width: 100%;
   display: flex;
   justify-content: center;
   padding-top: 2rem;
 }
 
-.btn-volver {
+.btn-back {
   border: none;
   background: none;
   padding: 1rem 2rem;
@@ -46,7 +46,7 @@
   border-radius: 10px;
 }
 
-.btn-volver:hover {
+.btn-back:hover {
   opacity: 1;
   cursor: pointer;
 }

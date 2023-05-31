@@ -23,7 +23,7 @@ export function ItemListContainer ({favorites = false}) {
   const filteredProducts = filterProducts(products)
 
   return(
-    <section className='products'>
+    <main className='products'>
       <Aside />
       <div className='main-products-container'>
         {loading && <Loading />}
@@ -38,6 +38,6 @@ export function ItemListContainer ({favorites = false}) {
         </ul>
         {(category || favorites) && !loading && <BtnVolver path={'/'}/>}
       </div>
-    </section>
+    </main>
   )
 }
