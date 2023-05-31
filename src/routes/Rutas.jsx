@@ -6,6 +6,7 @@ import { FeaturedProducts } from '../components/featuredProducts/FeaturedProducs
 import { ItemDetail } from '../components/itemDetail/ItemDetail';
 import { Footer } from '../components/footer/Footer';
 import { Contact } from '../components/contact/Contact';
+import { BranchListContainer } from '../components/branchListContainer/BranchListContainer';
 
 
 export function Rutas () {
@@ -20,6 +21,7 @@ export function Rutas () {
         <Route path='/favorites' element={<ItemListContainer favorites/>}/>
         <Route path='/:category' element={<ItemListContainer />}/>
         <Route path='/contact' element={<Contact />}/>
+        <Route path='/branchs' element={<BranchListContainer />}/>
       </Routes>
       <Footer />
     </BrowserRouter>
