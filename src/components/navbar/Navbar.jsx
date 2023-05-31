@@ -9,16 +9,10 @@ import { Search } from '../../elements/search/Search'
 import { NavLink } from 'react-router-dom'
 import { FavContext } from '../../contexts/Favorites'
 
-import { useNavigate } from 'react-router-dom'
 
 export function Navbar () {
   
   const {totalFavs} = useContext(FavContext)
-  // const handleFav = () => {
-  //   setFav(!fav)
-  // }
-
-  const navigate = useNavigate();
 
   const handleShowMenu = () => {
     const menuNav = document.querySelector('.navbar')
