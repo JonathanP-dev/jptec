@@ -48,11 +48,16 @@
 .item-detail-btn-add {
   border: none;
   background: none;
-  padding: 1rem 2rem;
+  padding: .8rem 2rem;
   background-color: rgba(0, 52, 221, 0.823);
   color: #fff;
   border-radius: 10px;
   cursor: pointer;
+  opacity: .8;
+}
+
+.item-detail-btn-add:hover {
+  opacity: 1;
 }
 
 @media (min-width: 768px) {

@@ -2,11 +2,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Navbar } from '../components/navbar/Navbar';
 import { ItemListContainer } from '../components/itemListContainer/ItemListContainer';
 import { HotSaleBar } from '../components/hotSaleBar/HotSaleBar';
-import { FeaturedProducts } from '../components/featuredProducts/FeaturedProducs';
 import { ItemDetail } from '../components/itemDetail/ItemDetail';
 import { Footer } from '../components/footer/Footer';
 import { Contact } from '../components/contact/Contact';
 import { BranchListContainer } from '../components/branchListContainer/BranchListContainer';
+import { Home } from '../pages/Home';
+import { Favorites } from '../pages/Favorites';
+import { Cart } from '../pages/Cart';
 
 
 export function Rutas () {
@@ -15,13 +17,14 @@ export function Rutas () {
       <Navbar/>
       <HotSaleBar/>
       <Routes>
-        <Route path='/' element={<main><FeaturedProducts/><ItemListContainer /></main>}/>
+        <Route path='/' element={<Home />}/>
         <Route path={'/product/:id'} element={<ItemDetail />}/>
         {/* chequear favorites que retorna todo, usar contexto????? */}
-        <Route path='/favorites' element={<ItemListContainer favorites/>}/>
+        <Route path='/favorites' element={<Favorites />}/>
         <Route path='/:category' element={<ItemListContainer />}/>
         <Route path='/contact' element={<Contact />}/>
         <Route path='/branchs' element={<BranchListContainer />}/>
+        <Route path='/cart' element={<Cart />}/>
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -9,12 +9,11 @@ import { Loading } from '../../elements/Loading'
 import { useGetProducts } from '../../hooks/useProducts'
 import { useFilters } from '../../hooks/useFilters'
 
-import { BtnVolver } from '../../elements/buttons/BtnVolver'
+import { BtnBack } from '../../elements/buttons/BtnBack'
 import { useParams } from 'react-router-dom'
 import { Aside } from '../aside/Aside'
 
 export function ItemListContainer ({favorites = false}) {
-  
   const {category} = useParams();
   const {products, loading} = useGetProducts({category, favorites})
 
@@ -36,7 +35,7 @@ export function ItemListContainer ({favorites = false}) {
           ))
           }
         </ul>
-        {(category || favorites) && !loading && <BtnVolver path={'/'}/>}
+        {(category || favorites) && !loading && <BtnBack path={'/'} text='Go Back'/>}
       </div>
     </main>
   )

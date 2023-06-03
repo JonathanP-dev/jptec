@@ -54,10 +54,9 @@ export const PRODUCTS = [
     description: "Laptop Lenovo 16', FHD, 16GB, 1TB solid, 65Hz",
     category: "laptops",
     images: [
-      "laptop",
-      "laptop2"
-    ],
-    favorite: false
+      "laptop.png",
+      "laptop2.png"
+    ]
   },
   {
     id: 2,
@@ -66,10 +65,9 @@ export const PRODUCTS = [
     description: "Laptop HP 14', FHD, 8GB, 512MB solid, 65Hz",
     category: "laptops",
     images: [
-      "laptop2",
-      "laptop"
-    ],
-    favorite: false
+      "laptop2.png",
+      "laptop.png"
+    ]
   },
   {
     id: 3,
@@ -78,10 +76,9 @@ export const PRODUCTS = [
     description: "Computadora Gamer, 4GB GeForce 3060x, 16GB, 1TB solid, Razen 5800",
     category: "computers",
     images: [
-      "computadora",
-      "computadora2"
-    ],
-    favorite: false
+      "computer.png",
+      "computer2.jpg"
+    ]
   },
   {
     id: 4,
@@ -90,10 +87,9 @@ export const PRODUCTS = [
     description: "Laptop Lenovo 17', FHD, 32GB, 1TB solid, 165Hz",
     category: "laptops",
     images: [
-      "laptop",
-      "laptop2"
-    ],
-    favorite: false
+      "laptop.png",
+      "laptop2.png"
+    ]
   },
   {
     id: 5,
@@ -102,9 +98,8 @@ export const PRODUCTS = [
     description: "Auriculares con orejitas para verte super cool cuando programas o perdes unas partidas de LoL",
     category: "accesories",
     images: [
-      "auriculares2"
-    ],
-    favorite: false
+      "headphones2.jpg"
+    ]
   },
   {
     id: 6,
@@ -113,10 +108,9 @@ export const PRODUCTS = [
     description: "Auriculares Gamer mega pro",
     category: "accesories",
     images: [
-      "auriculares",
-      "auriculares2"
-    ],
-    favorite: false
+      "headphones.jpg",
+      "headphones2.jpg"
+    ]
   },
   {
     id: 7,
@@ -125,10 +119,9 @@ export const PRODUCTS = [
     description: "Monitor Samsung UFHD, 27', 1800R, re gigante para poder jugar unas partiditas de LoL",
     category: "monitors",
     images: [
-      "monitor",
-      "monitor2"
-    ],
-    favorite: false
+      "monitor.png",
+      "monitor2.png"
+    ]
   },
   {
     id: 8,
@@ -137,10 +130,9 @@ export const PRODUCTS = [
     description: "Monitor Samsung 4K, 24', 1800R, re gigante para poder jugar unas partiditas de LoL y Valorant",
     category: "monitors",
     images: [
-      "monitor2",
-      "monitor"
-    ],
-    favorite: false
+      "monitor2.png",
+      "monitor.png"
+    ]
   },
   {
     id: 9,
@@ -149,10 +141,9 @@ export const PRODUCTS = [
     description: "Monitor Samsung UFHD, 27', 1800R, re gigante para poder jugar unas partiditas de LoL",
     category: "monitors",
     images: [
-      "monitor",
-      "monitor2"
-    ],
-    favorite: false
+      "monitor3.png",
+      "monitor2.png"
+    ]
   },
   {
     id: 10,
@@ -161,9 +152,8 @@ export const PRODUCTS = [
     description: "Intel core I9 9800, 32GB, 16GB 3060ti, 512GB solid, 1TB hard",
     category: "computers",
     images: [
-      "computadora",
-      "computadora2"
-    ],
-    favorite: true
+      "computer3.jpg",
+      "computer2.jpg"
+    ]
   }
 ]
