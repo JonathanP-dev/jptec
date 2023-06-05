@@ -15,7 +15,7 @@ react-router-dom: versión - 6.11.1.\
 
 Todos los estilos fueron creados a por Jonathan Pereira.\
 
-### `Funcionamiento general`
+### Funcionamiento general
 
 En la Web App JPTEC podrás: \
 . Ver productos almacenados en Firestore.\
@@ -25,15 +25,15 @@ En la Web App JPTEC podrás: \
 . Eliminar productos del carrito.\
 . Finalizar compra, creando una nueva orden que se almacena en Firestore.\
 
-### `Próximas funcionalidades`
+### Próximas funcionalidades
 
 . Agregar productos a una lista de favoritos.
 . Contactar con JPTEC mediante correo para consultas.
 
-### `Link de la aplicación`
+### Link de la aplicación
 
 [JPTEC](https://reactjs.org/).
 
-### `Link del repositorio`
+### Link del repositorio
 
 [JPTEC-GitHub](https://github.com/JonathanP-dev/jptec).
