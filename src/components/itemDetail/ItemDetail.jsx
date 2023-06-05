@@ -14,25 +14,35 @@ export function ItemDetail () {
   const {id} = useParams()
   const {product, loading} = useGetProductById(id)
   return (
-    <main>
+    <main className='main-item-detail'>
       <section className="item-detail-container">
-        {product && !loading ?
-          <div className="item-details">
-            <div className='item-img-title'>
-              <img className='item-detail-img' src={`../${product.images[0]}`} alt={product.description} />
-              <h1 className='item-detail-title'>{product.title}</h1>
-            </div>
-            <div className='item-desc-price'>
-              <span className='item-detail-desc'>{product.description}</span>
-              <h2 className='item-detail-price'>Precio: ${product.price}</h2>
-              <BtnPlus onClick={() => addToCart({...product, quantity: 1})} >ADD TO CART</BtnPlus>
-            </div>
+        {!product ? 
+          <div className='no-product-found'>
+            <span>No product found..</span>
+            <BtnBack path={'/'} text='Go Back'/>
           </div>
           :
-          <Loading />
-        }
+          product && !loading ?
+          <>
+            <div className="item-details">
+              <div className='item-img-title'>
+                <img className='item-detail-img' src={`${product.images[0]}`} alt={product.description} />
+                <h1 className='item-detail-title'>{product.title}</h1>
+              </div>
+              <div className='item-desc-price'>
+                <span className='item-detail-desc'>{product.description}</span>
+                <h2 className='item-detail-price'>Precio: ${product.price}</h2>
+                <BtnPlus onClick={() => addToCart({...product, quantity: 1})} >ADD TO CART</BtnPlus>
+              </div>
+            </div>
+            <BtnBack path={'/'} text='Go Back'/>
+          </>
+          :
+          <>
+            <Loading />
+          </>
+          }
       </section>
-      <BtnBack path={'/'} text='Go Back'/>
     </main>
   )
 }

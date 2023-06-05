@@ -14,7 +14,7 @@ export function NavbarIcon ({type}) {
   return (
     <div className='navbar-icons'>
       <NavLink to={type === 'favRed' || type === 'fav' ? 'favorites' : 'cart'}>
-        <img className='navbar-icons' src={`${type}.png`} alt="logo de favoritos" />
+        <img className='navbar-icons' src={type === 'favRed' ? 'https://res.cloudinary.com/dtx4bsvnh/image/upload/v1685985910/JPTEC/favRed_utualv.png' : 'https://res.cloudinary.com/dtx4bsvnh/image/upload/v1685985911/JPTEC/shoppingCart_m4i5st.png'} alt="logo de favoritos" />
         {type == 'shoppingCart' ?
           <span>{cartQuantity}</span>
         : type == 'favRed' &&

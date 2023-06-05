@@ -12,7 +12,6 @@ export function Contact () {
       input.value = ''
       textarea.value = ''
     });
-    console.log(inputs)
   }
 
   return (

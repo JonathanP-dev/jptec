@@ -6,6 +6,9 @@ import { getCartTotalPrice } from '../helpers/helpers'
 import { BtnPlus } from '../elements/buttons/BtnPlus'
 import { Alert } from '../elements/alert/Alert'
 
+import { db } from '../firebase.config'
+import { addDoc, collection } from 'firebase/firestore'
+
 
 export function Cart () {
 
@@ -23,17 +26,23 @@ export function Cart () {
   const cartContainerRef = useRef()
   const formRef = useRef()
 
-  const {cart} = useContext(CartContext)
+  const {cart, setCart} = useContext(CartContext)
+
+  const [cartForm, setCartForm] = useState(
+    {
+      items: cart,
+      total: getCartTotalPrice(cart)
+    }
+  )
+
   const handlePurchease = () => {
     setPurcheaseConfirmation( true )
     cartContainerRef.current.classList.toggle('show-cart')
     formRef.current.classList.toggle('show-center')
-    console.log(cartContainerRef.current)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // if(purcheaseConfirmation) {
       if(name == '' || lastname == '' || phone == '' || email == '' || email2 == '') {
         setMsg('Error reading information')
         setType(false)
@@ -52,17 +61,32 @@ export function Cart () {
         }, 1500);
         return
       }
+
+      setCartForm({...cartForm, buyer: {name, lastname, phone, email}})
+
+      const col = collection(db, 'orders')
+      const order = await addDoc(col, cartForm)
+
+
       cartContainerRef.current.classList.toggle('show-cart')
       formRef.current.classList.toggle('show-center')
-      console.log('confirmacion de compra')
       setPurcheaseConfirmation(false)
-      setMsg('Purchease completed')
+      setMsg(`Purchease completed (ID: ${order.id})`)
         setType(true)
         setAlert(true)
         setTimeout(() => {
           setAlert(false)
-        }, 1500);
-    // }
+        }, 3500);
+      setCart([])
+      setCartForm({
+        items: cart,
+        total: getCartTotalPrice(cart)
+      })
+  }
+
+  const handleCancel = () => {
+    cartContainerRef.current.classList.toggle('show-cart')
+    formRef.current.classList.toggle('show-center')
   }
   return (
     <main>
@@ -93,6 +117,9 @@ export function Cart () {
       </ul>
       <div ref={formRef} className="purchease-container">
         <form className='purchease-form' onSubmit={handleSubmit}>
+          <div className='cancel-container'>
+            <span className='cancel' onClick={handleCancel}>X</span>
+          </div>
           <div>
             <label htmlFor="name">Name:</label>
             <input required type="text" id='name' value={name} onChange={(e) => setName(e.target.value)}/>

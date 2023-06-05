@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react'
-
-// import { PRODUCTS } from '../variables'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../firebase.config'
 
-export function useGetProducts ({category}) {
+export function useGetProducts ({category, id}) {
   
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -19,17 +17,20 @@ export function useGetProducts ({category}) {
         if(category) {
           const items = result.filter(product => product.category == category)
           setProducts(items)
-          setLoading(false)
+        } else if(id) {
+          const item = result.find(product => product.id == id)
+          setProducts(item)
         } else {
           setProducts(result)
-          setLoading(false)
         }
       } catch (error) {
         console.log('error en firestore', error)
+      } finally {
+        setLoading(false)
       }
     }
     getProducts()
-  }, [category])
+  }, [category, id])
 
   return {products, loading}
 }

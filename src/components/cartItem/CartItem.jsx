@@ -1,11 +1,14 @@
+import { useContext } from 'react'
 import './CartItem.css'
+import { CartContext } from '../../contexts/Cart'
 
 export function CartItem ({cartItem}) {
 
-  const {id, images, title, description, price, quantity} = cartItem
+  const {deleteFromCart} = useContext(CartContext)
+  const {images, title, description, price, quantity} = cartItem
   
   const handleDelete = () => {
-    console.log(`eliminar elemento ${id}`)
+    deleteFromCart(cartItem)
   }
   return (
     <section className="cart-product-container">

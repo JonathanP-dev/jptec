@@ -1,6 +1,11 @@
+.main-item-detail {
+  min-height: 70vh;
+}
+
 .item-detail-container {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
@@ -58,6 +63,17 @@
 
 .item-detail-btn-add:hover {
   opacity: 1;
+}
+
+.no-product-found {
+  display: flex;
+  flex-direction: column;
+}
+
+.no-product-found span {
+  font-style: italic;
+  color: black;
+  font-size: 1.3rem;
 }
 
 @media (min-width: 768px) {

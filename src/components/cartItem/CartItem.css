@@ -90,7 +90,7 @@
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 0 2px black;
+  box-shadow: 0 0 3px black;
   padding: 1rem 0;
   color: black;
   font-weight: bold;
@@ -112,6 +112,31 @@
 
 .show-center {
   display: flex;
+}
+
+.purchease-form .cancel-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.cancel {
+  width: fit-content;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: .5rem;
+  border-radius: 2px;
+  font-weight: bolder;
+}
+
+.cancel:hover {
+  background-color: red;
+}
+
+.purchease-form div input {
+  padding: .2rem .5rem;
+  font-size: .9rem;
 }
 
 @media (min-width: 600px) {
@@ -184,5 +209,12 @@
   .purchease-form {
     gap: 2rem;
     font-size: 1.2rem;
+  }
+
+  .purchease-form .cancel-container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
   }
 }
