@@ -20,6 +20,16 @@ export function Navbar () {
     const line2 = document.querySelector('.menu-btn')
     line2.classList.toggle('collapse')
   }
+
+  const handleNoShowMenu = () => {
+    setTimeout(() => {
+      const menuNav = document.querySelector('.navbar')
+      menuNav.classList.remove('show')
+  
+      const line2 = document.querySelector('.menu-btn')
+      line2.classList.remove('collapse')
+    }, 200);
+  }
   return (
     <div className="navbar-container">
 
@@ -37,13 +47,13 @@ export function Navbar () {
       </section>
       <section className="navbar">
         <ul className='navbar-menu'>
-          <li><NavLink to='/'>Store</NavLink></li>
-          <li><NavLink to='/laptops'>Laptops</NavLink></li>
-          <li><NavLink to='/monitors'>Monitors</NavLink></li>
-          <li><NavLink to='/computers'>Computers</NavLink></li>
-          <li><NavLink to='/accesories'>Accesories</NavLink></li>
-          <li><NavLink to='/branchs'>Branch Offices</NavLink></li>
-          <li><NavLink to='/contact'>Contact</NavLink></li>
+          <li onClick={handleNoShowMenu}><NavLink to='/'>Store</NavLink></li>
+          <li onClick={handleNoShowMenu}><NavLink to='/laptops'>Laptops</NavLink></li>
+          <li onClick={handleNoShowMenu}><NavLink to='/monitors'>Monitors</NavLink></li>
+          <li onClick={handleNoShowMenu}><NavLink to='/computers'>Computers</NavLink></li>
+          <li onClick={handleNoShowMenu}><NavLink to='/accesories'>Accesories</NavLink></li>
+          <li onClick={handleNoShowMenu}><NavLink to='/branchs'>Branch Offices</NavLink></li>
+          <li onClick={handleNoShowMenu}><NavLink to='/contact'>Contact</NavLink></li>
         </ul>
       </section>
     </div>
