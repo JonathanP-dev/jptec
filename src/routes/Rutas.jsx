@@ -19,7 +19,6 @@ export function Rutas () {
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path={'/product/:id'} element={<ItemDetail />}/>
-        {/* chequear favorites que retorna todo, usar contexto????? */}
         <Route path='/favorites' element={<Favorites />}/>
         <Route path='/:category' element={<ItemListContainer />}/>
         <Route path='/contact' element={<Contact />}/>

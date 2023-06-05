@@ -1,4 +1,5 @@
 import './App.css'
+import { useSetFavs } from './hooks/useSetFavs'
 import { Rutas } from './routes/Rutas'
 
 function App() {

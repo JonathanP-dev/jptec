@@ -7,13 +7,13 @@ import { FavContext } from '../../contexts/Favorites'
 import { useNavigate } from 'react-router-dom'
 import { BtnPlus } from '../../elements/buttons/BtnPlus'
 
-export function Card ({setCart, item}) {
-  const {setTotalFavs} = useContext(FavContext)
+export function Card ({item}) {
   const {addToCart} = useContext(CartContext)
+
 
   const navigate = useNavigate()
   const [singularQuantity, setSingularQuantity] = useState(1)
-  const [singularFav, setSingularFav] = useState(item.favorite)
+  const [singularFav, setSingularFav] = useState(false)
   const {title, price, images} = item
 
   const handlePlus = () => {
@@ -28,11 +28,11 @@ export function Card ({setCart, item}) {
 
   const handleFav = () => {
     setSingularFav(!singularFav)
-    if(singularFav) {
-      setTotalFavs(prev => prev - 1)
-    } else {
-      setTotalFavs(prev => prev + 1)
-    }
+    // if(singularFav) {
+    //   setTotalFavs(prev => prev - 1)
+    // } else {
+    //   setTotalFavs(prev => prev + 1)
+    // }
   }
 
   return (

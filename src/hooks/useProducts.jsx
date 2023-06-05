@@ -1,75 +1,35 @@
 import { useState, useEffect } from 'react'
 
-// test imports
-// import { API_PRODUCTS_URL } from '../variables'
-import { PRODUCTS } from '../variables'
+// import { PRODUCTS } from '../variables'
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../firebase.config'
 
-export function useGetProducts ({category, favorites}) {
+export function useGetProducts ({category}) {
   
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Fetching a API aleatoria para testeo, lo dejo para luego cambiar la URL cuando tenga mi API si es que usamos.
-    // fetch(`/products.json`)
-    // .then(res => res.json())
-    // .then(data => {
-    //   setTimeout(() => {
-    //     if(category){
-    //       const items = data.filter(product => product.category == category)
-    //       setProducts(items)
-    //       setLoading(false)
-    //     } else if (favorites) {
-    //       const items = data.filter(product => product.favorite == true)
-    //       setProducts(items)
-    //       setLoading(false)
-    //     }
-    //     else {
-    //       setProducts(data)
-    //       setLoading(false)
-    //     }
-    //   }, 2000);
-    // })
-    // .catch(err => console.log(err))
-    const products = PRODUCTS;
-      setTimeout(() => {
-        if(category){
-          const items = products.filter(product => product.category == category)
+    const getProducts = async () => {
+      try {
+        const col = collection(db, 'products')
+        const data = await getDocs(col)
+        const result = data.docs.map(doc => doc={id:doc.id, ...doc.data()})
+
+        if(category) {
+          const items = result.filter(product => product.category == category)
           setProducts(items)
           setLoading(false)
-        } else if (favorites) {
-          const items = products.filter(product => product.favorite == true)
-          setProducts(items)
+        } else {
+          setProducts(result)
           setLoading(false)
         }
-        else {
-          setProducts(products)
-          setLoading(false)
-        }
-      }, 1000);
-    
+      } catch (error) {
+        console.log('error en firestore', error)
+      }
+    }
+    getProducts()
   }, [category])
 
   return {products, loading}
-}
-
-export function useGetFavorites () {
-  
-  const [favs, setFavs] = useState([])
-  const [loading, setLoading] = useState(true)
-  
-  useEffect(() => {
-
-    fetch(`./products.json`)
-    .then(res => res.json())
-    .then(data => {
-      const items = data.filter(product => product.favorite == true)
-      setFavs(items)
-      setLoading(false)
-    })
-    .catch(err => console.log(err))
-    
-  }, [])
-
-  return {favs, loading}
 }
