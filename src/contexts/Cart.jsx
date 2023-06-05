@@ -1,5 +1,6 @@
 import { createContext, useState } from 'react';
 import { Alert } from '../elements/alert/Alert';
+import { checkExistInCart, plusQuantity } from '../helpers/helpers';
 
 export const CartContext = createContext('')
 
@@ -14,6 +15,9 @@ export function CartProvider ( { children } ) {
         setTimeout(() => {
             setAlert(false)
         }, 1500);
+        if(checkExistInCart(cart, item)){
+            return setCart(plusQuantity(cart, item))
+        }
         return setCart([...cart, item])
     }
 

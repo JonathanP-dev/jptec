@@ -45,7 +45,6 @@ export function Cart () {
     setPurcheaseConfirmation( true )
     cartContainerRef.current.classList.toggle('show-cart')
     formRef.current.classList.toggle('show-center')
-    console.log(cartContainerRef.current)
   }
 
   const handleChange = (e) => {
@@ -101,7 +100,6 @@ export function Cart () {
 
       cartContainerRef.current.classList.toggle('show-cart')
       formRef.current.classList.toggle('show-center')
-      console.log('confirmacion de compra')
       setPurcheaseConfirmation(false)
       setMsg(`Purchease completed (ID: ${order.id})`)
         setType(true)

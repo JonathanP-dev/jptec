@@ -21,7 +21,7 @@ export function useGetProducts ({category}) {
           setProducts(result)
         }
       } catch (error) {
-        console.log('error en firestore', error)
+        return setProducts(false)
       } finally {
         setLoading(false)
       }

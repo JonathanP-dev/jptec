@@ -19,7 +19,6 @@ export function useGetProductById (id) {
           setProduct(false)
         }
       } catch (error) {
-        console.log('error en firestore', error)
         return setProduct(false)
       } finally {
         setLoading(false)
