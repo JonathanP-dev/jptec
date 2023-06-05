@@ -30,6 +30,12 @@ export function Cart () {
 
   const [cartForm, setCartForm] = useState(
     {
+      buyer: {
+        name: '',
+        lastname: '',
+        phone: '',
+        email: ''
+      },
       items: cart,
       total: getCartTotalPrice(cart)
     }
@@ -39,8 +45,36 @@ export function Cart () {
     setPurcheaseConfirmation( true )
     cartContainerRef.current.classList.toggle('show-cart')
     formRef.current.classList.toggle('show-center')
+    console.log(cartContainerRef.current)
   }
 
+  const handleChange = (e) => {
+    const {name, value} = e.target
+    if(name == 'name') {
+      setName(e.target.value)
+    }
+    if(name == 'lastname') {
+      setLastname(e.target.value)
+    }
+    if(name == 'phone') {
+      setPhone(e.target.value)
+    }
+    if(name == 'email') {
+      setEmail(e.target.value)
+    }
+    if(name == 'email2') {
+      setEmail2(e.target.value)
+    }
+    if(name !== 'email2') {
+      setCartForm({
+        ...cartForm,
+        buyer: {
+          ...cartForm.buyer,
+          [name]:value
+        }
+      })
+    }
+  }
   const handleSubmit = async (e) => {
     e.preventDefault()
       if(name == '' || lastname == '' || phone == '' || email == '' || email2 == '') {
@@ -62,14 +96,12 @@ export function Cart () {
         return
       }
 
-      setCartForm({...cartForm, buyer: {name, lastname, phone, email}})
-
       const col = collection(db, 'orders')
       const order = await addDoc(col, cartForm)
 
-
       cartContainerRef.current.classList.toggle('show-cart')
       formRef.current.classList.toggle('show-center')
+      console.log('confirmacion de compra')
       setPurcheaseConfirmation(false)
       setMsg(`Purchease completed (ID: ${order.id})`)
         setType(true)
@@ -78,10 +110,18 @@ export function Cart () {
           setAlert(false)
         }, 3500);
       setCart([])
-      setCartForm({
-        items: cart,
-        total: getCartTotalPrice(cart)
-      })
+      setCartForm(
+        {
+          buyer: {
+            name: '',
+            lastname: '',
+            phone: '',
+            email: ''
+          },
+          items: cart,
+          total: getCartTotalPrice(cart)
+        }
+      )
   }
 
   const handleCancel = () => {
@@ -122,23 +162,23 @@ export function Cart () {
           </div>
           <div>
             <label htmlFor="name">Name:</label>
-            <input required type="text" id='name' value={name} onChange={(e) => setName(e.target.value)}/>
+            <input required type="text" name='name' id='name' value={name} onChange={handleChange}/>
           </div>
           <div>
             <label htmlFor="lastname">Lastname:</label>
-            <input required type="text" id='lastname' value={lastname} onChange={(e) => setLastname(e.target.value)}/>
+            <input required type="text" name='lastname' id='lastname' value={lastname} onChange={handleChange}/>
           </div>
           <div>
             <label htmlFor="phone">Phone:</label>
-            <input required type="text" id='phone' value={phone} onChange={(e) => setPhone(e.target.value)}/>
+            <input required type="text" name='phone' id='phone' value={phone} onChange={handleChange}/>
           </div>
           <div>
             <label htmlFor="email">E-Mail:</label>
-            <input required  type="email" id='email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+            <input required  type="email" name='email' id='email' value={email} onChange={handleChange}/>
           </div>
           <div>
             <label htmlFor="email2">E-Mail confirmation:</label>
-            <input required type="email" id='email2' value={email2} onChange={(e) => setEmail2(e.target.value)}/>
+            <input required type="email" name='email2' id='email2' value={email2} onChange={handleChange}/>
           </div>
           <BtnPlus onClick={handleSubmit} >COMPRAR</BtnPlus>
         </form>

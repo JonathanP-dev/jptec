@@ -33,7 +33,7 @@ export function CartItem ({cartItem}) {
         </div>
       </section>
       <div className="delete-container">
-        <img onClick={handleDelete} className='delete' src="delete.png" alt="" />
+        <img onClick={handleDelete} className='delete' src="https://res.cloudinary.com/dtx4bsvnh/image/upload/v1685985910/JPTEC/delete_snnyel.png" alt="" />
       </div>
     </section>
   )
