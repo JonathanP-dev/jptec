@@ -78,7 +78,7 @@ export function Cart () {
   const handleSubmit = async (e) => {
     e.preventDefault()
       if(name == '' || lastname == '' || phone == '' || email == '' || email2 == '') {
-        setMsg('Error reading information')
+        setMsg('Empty field')
         setType(false)
         setAlert(true)
         setTimeout(() => {
