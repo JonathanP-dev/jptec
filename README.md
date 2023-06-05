@@ -1,35 +1,42 @@
-# Getting Started with Create React App
+# Aplicacion E-commerce creada por Jonathan Pereira
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue iniciado con: [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
+Para desarrollarlo se utilizaron la siguientes dependencias:
 
-### `npm start`
+firebase: versión - 9.22.1.\
+react: versión - 18.2.0.\
+react-dom: versión - 18.2.0.\
+react-router-dom: versión - 6.11.1.\
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `Estilos`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Todos los estilos fueron creados a por Jonathan Pereira.\
 
-### `npm test`
+### `Funcionamiento general`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+En la Web App JPTEC podrás: \
+. Ver productos almacenados en Firestore.\
+. Ver detalles de producto por ID.\
+. Filtrar productos, por categoría y por precio.\
+. Agregar productos al carrito.\
+. Eliminar productos del carrito.\
+. Finalizar compra, creando una nueva orden que se almacena en Firestore.\
 
-### `npm run build`
+### `Próximas funcionalidades`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+. Agregar productos a una lista de favoritos.
+. Contactar con JPTEC mediante correo para consultas.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `Link de la aplicación`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[JPTEC](https://reactjs.org/).
 
-### `npm run eject`
+### `Link del repositorio`
+
+[JPTEC-GitHub]().
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
