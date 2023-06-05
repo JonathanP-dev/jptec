@@ -2,7 +2,7 @@
 
 Este proyecto fue iniciado con: [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Dependencies
 
 Para desarrollarlo se utilizaron la siguientes dependencias:
 
