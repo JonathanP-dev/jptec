@@ -32,7 +32,7 @@ En la Web App JPTEC podrás: \
 
 ### Link de la aplicación
 
-[JPTEC](https://reactjs.org/).
+[JPTEC](https://jptec.vercel.app/).
 
 ### Link del repositorio
 
