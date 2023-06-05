@@ -23,11 +23,11 @@ En la Web App JPTEC podrás: \
 . Filtrar productos, por categoría y por precio.\
 . Agregar productos al carrito.\
 . Eliminar productos del carrito.\
-. Finalizar compra, creando una nueva orden que se almacena en Firestore.\
+. Finalizar compra, creando una nueva orden que se almacena en Firestore.
 
 ### Próximas funcionalidades
 
-. Agregar productos a una lista de favoritos.
+. Agregar productos a una lista de favoritos.\
 . Contactar con JPTEC mediante correo para consultas.
 
 ### Link de la aplicación
