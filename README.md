@@ -11,7 +11,7 @@ react: versión - 18.2.0.\
 react-dom: versión - 18.2.0.\
 react-router-dom: versión - 6.11.1.\
 
-### `Estilos`
+### Estilos
 
 Todos los estilos fueron creados a por Jonathan Pereira.\
 
