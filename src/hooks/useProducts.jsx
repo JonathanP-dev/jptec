@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../firebase.config'
 
-export function useGetProducts ({category, id}) {
+export function useGetProducts ({category}) {
   
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -17,9 +17,6 @@ export function useGetProducts ({category, id}) {
         if(category) {
           const items = result.filter(product => product.category == category)
           setProducts(items)
-        } else if(id) {
-          const item = result.find(product => product.id == id)
-          setProducts(item)
         } else {
           setProducts(result)
         }
@@ -30,7 +27,7 @@ export function useGetProducts ({category, id}) {
       }
     }
     getProducts()
-  }, [category, id])
+  }, [category])
 
   return {products, loading}
 }

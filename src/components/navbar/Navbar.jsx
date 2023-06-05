@@ -4,7 +4,6 @@ import './Navbar.css'
 
 import { NavbarIcon } from '../../elements/NavbarIcon'
 import { Logo } from '../../elements/logo/Logo'
-import { Search } from '../../elements/search/Search'
 
 import { NavLink } from 'react-router-dom'
 import { FavContext } from '../../contexts/Favorites'
@@ -27,7 +26,6 @@ export function Navbar () {
       <section className="brand-search-icons-container">
         <Logo />
         <div className="navbar-icons-container">
-          <Search />
             <NavbarIcon type={totalFavs ? 'favRed' : 'fav'} />
           <NavbarIcon type={'shoppingCart'}/>
           <button onClick={handleShowMenu} className='menu-btn'>
