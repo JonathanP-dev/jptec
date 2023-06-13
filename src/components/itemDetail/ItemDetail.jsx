@@ -31,7 +31,7 @@ export function ItemDetail () {
               </div>
               <div className='item-desc-price'>
                 <span className='item-detail-desc'>{product.description}</span>
-                <h2 className='item-detail-price'>Precio: ${product.price}</h2>
+                <h2 className='item-detail-price'>Price: ${product.price}</h2>
                 <BtnPlus onClick={() => addToCart({...product, quantity: 1})} >ADD TO CART</BtnPlus>
               </div>
             </div>

@@ -149,7 +149,7 @@ export function Cart () {
             )
             })}
             <span className='cart-total'>{`Total: $${getCartTotalPrice(cart)}`}</span>
-            <BtnPlus onClick={handlePurchease}>COMPRAR</BtnPlus>
+            <BtnPlus onClick={handlePurchease}>BUY NOW</BtnPlus>
           </>
         }
       </ul>

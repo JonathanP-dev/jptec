@@ -42,7 +42,7 @@ export function Card ({item}) {
         </>}
       </div>
       <BtnPlus onClick={() => addToCart({...item, quantity: singularQuantity})}>ADD TO CART</BtnPlus>
-      <button onClick={() => navigate(`/product/${item.id}`)} className='card-btn'>ver mas</button>
+      <button onClick={() => navigate(`/product/${item.id}`)} className='card-btn'>MORE</button>
     </div>
   )
 }
