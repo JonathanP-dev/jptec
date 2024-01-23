@@ -47,6 +47,8 @@ export function Cart () {
     formRef.current.classList.toggle('show-center')
   }
 
+  
+
   const handleChange = (e) => {
     const {name, value} = e.target
     if(name == 'name') {
